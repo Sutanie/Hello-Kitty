@@ -27,28 +27,28 @@
       height: 100%;
       background-color: pink;
       overflow: hidden;
-      text-align: center;
     }
 
-    .big-heart {
+    /* Heart using SVG for better compatibility */
+    .heart {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 400px;
-      height: 350px;
+      width: 300px;
+      height: 300px;
       background-color: red;
+      border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
-      clip-path: path('M 0.5 0 C 0.2 0 0 0.3 0 0.55 C 0 0.8 0.3 1 0.5 1 C 0.7 1 1 0.8 1 0.55 C 1 0.3 0.8 0 0.5 0 Z');
+      clip-path: url(#heart-shape); /* SVG clip-path */
     }
 
-    .big-heart h1 {
+    .heart h1 {
       color: white;
-      font-size: 22px;
+      font-size: 24px;
       text-align: center;
-      padding: 10px;
     }
 
     .hello-kitty {
@@ -67,7 +67,7 @@
 
     @keyframes float {
       0% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+      50% { transform: translateY(-20px); }
       100% { transform: translateY(0); }
     }
   </style>
@@ -75,15 +75,21 @@
 <body>
   <div class="container">
     <!-- Floating Hello Kitty images -->
-    <img src="https://github.com/Sutanie/Hello-Kitty/blob/main/adorable-hello-kitty-head-hd-transparent-png-735811696670199l8qnq79qof__1_-removebg-preview.png?raw=true" class="hello-kitty" alt="Hello Kitty">
-    <img src="https://github.com/Sutanie/Hello-Kitty/blob/main/adorable-hello-kitty-head-hd-transparent-png-735811696670199l8qnq79qof__1_-removebg-preview.png?raw=true" class="hello-kitty" alt="Hello Kitty">
-    <img src="https://github.com/Sutanie/Hello-Kitty/blob/main/adorable-hello-kitty-head-hd-transparent-png-735811696670199l8qnq79qof__1_-removebg-preview.png?raw=true" class="hello-kitty" alt="Hello Kitty">
-    <img src="https://github.com/Sutanie/Hello-Kitty/blob/main/adorable-hello-kitty-head-hd-transparent-png-735811696670199l8qnq79qof__1_-removebg-preview.png?raw=true" class="hello-kitty" alt="Hello Kitty">
-    <img src="https://github.com/Sutanie/Hello-Kitty/blob/main/adorable-hello-kitty-head-hd-transparent-png-735811696670199l8qnq79qof__1_-removebg-preview.png?raw=true" class="hello-kitty" alt="Hello Kitty">
-    <img src="https://github.com/Sutanie/Hello-Kitty/blob/main/adorable-hello-kitty-head-hd-transparent-png-735811696670199l8qnq79qof__1_-removebg-preview.png?raw=true" class="hello-kitty" alt="Hello Kitty">
+    <img src="https://upload.wikimedia.org/wikipedia/en/0/0a/Hello_Kitty_Character_Picture.png" class="hello-kitty" alt="Hello Kitty">
+    <img src="https://upload.wikimedia.org/wikipedia/en/0/0a/Hello_Kitty_Character_Picture.png" class="hello-kitty" alt="Hello Kitty">
+    <img src="https://upload.wikimedia.org/wikipedia/en/0/0a/Hello_Kitty_Character_Picture.png" class="hello-kitty" alt="Hello Kitty">
+    <img src="https://upload.wikimedia.org/wikipedia/en/0/0a/Hello_Kitty_Character_Picture.png" class="hello-kitty" alt="Hello Kitty">
+    <img src="https://upload.wikimedia.org/wikipedia/en/0/0a/Hello_Kitty_Character_Picture.png" class="hello-kitty" alt="Hello Kitty">
+    <img src="https://upload.wikimedia.org/wikipedia/en/0/0a/Hello_Kitty_Character_Picture.png" class="hello-kitty" alt="Hello Kitty">
 
-    <!-- Big Heart with the message -->
-    <div class="big-heart">
+    <!-- Heart with the message -->
+    <svg width="0" height="0">
+      <clipPath id="heart-shape" clipPathUnits="objectBoundingBox">
+        <path d="M0.5,0.75 C0.25,0.9,0,0.5,0.5,0 C1,0.5,0.75,0.9,0.5,0.75"></path>
+      </clipPath>
+    </svg>
+
+    <div class="heart">
       <h1>I love you, Adaeze!!!</h1>
     </div>
   </div>
